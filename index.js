@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import mysql from "mysql";
 import bodyParser from 'body-parser'
+import AddBookRoute from "./Routes/AddBookRoute.js";
+import LoginRoute from "./Routes/LoginRoute.js";
 
 const app=express();
 
@@ -13,7 +15,7 @@ app.use(bodyParser.json());
 app.get("/getData",(req,res)=>{
     res.send("Vidul");
 });
-
+/*
 app.post("/loginSystem",(req,res)=>{
     //console.log("form is submitted");
 
@@ -63,7 +65,7 @@ db.end((err) => {
 
 
 
-});
+});*/
 
 ///////////////////////////////////
 
@@ -146,4 +148,7 @@ db.end((err) => {
   console.log('Database connection closed.');
 });
 */
+
+app.use(AddBookRoute);
+app.use(LoginRoute);
 app.listen(3000,()=>console.log("backend is running"));

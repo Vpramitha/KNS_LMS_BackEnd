@@ -4,6 +4,6 @@ import AddBookController from '../controller/AddBookController.js';
 
 const AddBookRoute =express.Router();
 
-AddBookRoute.post("/",AddBookController)
+AddBookRoute.post("/addBook",AddBookController)
 
 export default AddBookRoute;

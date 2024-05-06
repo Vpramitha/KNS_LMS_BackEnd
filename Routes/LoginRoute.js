@@ -4,6 +4,6 @@ import loginController from '../controller/loginController.js';
 
 const LoginRoute =express.Router();
 
-LoginRoute.post("/",loginController.authentication)
+LoginRoute.post("/login",loginController)
 
 export default LoginRoute;
