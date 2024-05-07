@@ -16,3 +16,12 @@ db.connect((err) => {
 });
 
 export default db
+
+/*Close the database connection when done
+db.end((err) => {
+  if (err) {
+    console.error('Error closing database connection:', err);
+    return;
+  }
+  console.log('Database connection closed.');
+});*/

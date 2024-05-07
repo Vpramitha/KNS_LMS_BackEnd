@@ -2,10 +2,7 @@
 import { LoadCatalog } from "../Module/LoadCatalog.js"; 
 
 const LoadCatalogController = (req, res) => {
-    const { Title, Author, Price } = req.body;
-    console.log(Title,Author,Price+"the request")
-
-    
+        
     const callback = (error, result) => {
     if (error) {
         // Handle error
