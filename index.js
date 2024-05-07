@@ -4,6 +4,7 @@ import mysql from "mysql";
 import bodyParser from 'body-parser'
 import AddBookRoute from "./Routes/AddBookRoute.js";
 import LoginRoute from "./Routes/LoginRoute.js";
+import AddMemberRoute from "./Routes/AddMemberRoute.js";
 
 const app=express();
 
@@ -151,4 +152,5 @@ db.end((err) => {
 
 app.use(AddBookRoute);
 app.use(LoginRoute);
+app.use(AddMemberRoute);
 app.listen(3000,()=>console.log("backend is running"));
