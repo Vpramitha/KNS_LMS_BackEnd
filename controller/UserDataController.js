@@ -1,6 +1,5 @@
 const userDataController=(req,res)=>{
   
-
   if (!(req.cookies.user_id||req.cookies.user_name)) {
    res.json({"message":"you should log in to the system first"}); 
   }

@@ -8,6 +8,8 @@ import AddMemberRoute from "./Routes/AddMemberRoute.js";
 import LoadCatalogRoute from "./Routes/LoadCatalogRoute.js";
 import LoadMembersRoute from "./Routes/LoadMembersRoute.js";
 import UserDataRoute from "./Routes/UserDataRoute.js";
+import LogoutRoute from "./Routes/logout.route.js";
+import EditProfileRoute from "./Routes/EditProfileRoute.js";
 
 const app=express();
 
@@ -21,5 +23,7 @@ app.use(AddMemberRoute);
 app.use(LoadCatalogRoute);
 app.use(LoadMembersRoute);
 app.use(UserDataRoute);
+app.use(LogoutRoute);
+app.use(EditProfileRoute);
 
 app.listen(3000,()=>console.log("backend is running"));
