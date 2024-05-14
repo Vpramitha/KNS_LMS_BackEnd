@@ -14,7 +14,7 @@ const loginController=(req,res)=>{
   else{
     console.log(results);
     res.cookie('user_id', results[0].id, { httpOnly: true, expires: 0 });
-            res.cookie('user_name', results[0].Name, { httpOnly: true, expires: 0 });
+    res.cookie('user_name', results[0].Name, { httpOnly: true, expires: 0 });
     res.json({"message":"you can log in to the system"});
   }
 }
