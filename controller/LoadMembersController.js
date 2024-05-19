@@ -13,11 +13,11 @@ const LoadMembersController = (req, res) => {
         console.log("Load Members successfully:", results);
         res.status(200).json(results);
     }
+    
+}; 
 
-};
-
-LoadMembers(callback);
-
+LoadMembers(callback); 
+   
 };
 
 export default LoadMembersController;

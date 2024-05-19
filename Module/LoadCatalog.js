@@ -1,7 +1,7 @@
-import db from '../db.js';
+import db from '../db2.js';
 
 const LoadCatalog = (callback) => {
-    const query = "SELECT * FROM book";
+    const query = "SELECT * FROM bookprofile";
     db.query(query, callback);
 };
 

@@ -1,9 +1,9 @@
 
-import { addBook } from "../Module/AddBookModule.js"; 
+import { addBook,addCopies } from "../Module/AddBookModule.js"; 
 
 const AddBookController = (req, res) => {
-    const { Title, Author, Price } = req.body;
-    console.log(Title,Author,Price+"the request")
+    const { ISBN, Title, Author,Publisher,CategoryId,Description,NumberOfPages,Price,NumberOfCopies } = req.body;
+    console.log(ISBN, Title, Author,Publisher,CategoryId,Description,NumberOfPages,Price+NumberOfCopies+"the request");
 
     
     const callback = (error, result) => {
@@ -19,7 +19,8 @@ const AddBookController = (req, res) => {
 
 };
 
-addBook(Title, Author, Price,callback);
+addBook(ISBN, Title, Author,Publisher,CategoryId,Description,NumberOfPages,Price,NumberOfCopies,callback);
+addCopies(ISBN,NumberOfCopies);
 
 };
 
