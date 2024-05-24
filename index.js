@@ -14,6 +14,10 @@ import getCatagoriesRoute from "./Routes/getCategoriesRoute.js";
 import selectCopiesRoute from "./Routes/selectCopiesRoute.js";
 import EditCopyRoute from "./Routes/EditCopyRoute.js";
 import AddCopiesRoute from "./Routes/AddCopiesRoute.js";
+import EditBookRoute from "./Routes/EditBookRoute.js";
+import LoadStudentsRoute from "./Routes/LoadStudentsRoute.js";
+import AddNewStudentRoute from "./Routes/AddNewStudentRoute.js";
+import LoadNoticesRoute from "./Routes/LoadNoticesRoute.js";
 
 const app=express();
 
@@ -33,5 +37,9 @@ app.use(getCatagoriesRoute);
 app.use(selectCopiesRoute);
 app.use(EditCopyRoute);
 app.use(AddCopiesRoute);
+app.use(EditBookRoute);
+app.use(LoadStudentsRoute);
+app.use(AddNewStudentRoute);
+app.use(LoadNoticesRoute);
 
 app.listen(3000,()=>console.log("backend is running"));
