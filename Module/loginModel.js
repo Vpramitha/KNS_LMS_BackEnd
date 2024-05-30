@@ -1,7 +1,7 @@
-import db from '../db.js';
+import db from '../db2.js';
 
 const login = (UserName,password, callback) => {
-    const query = 'SELECT * FROM login WHERE Name = ? AND Passwprd = ? ';
+    const query = 'SELECT * FROM user WHERE UserName = ? AND Password = ? ';
 
 db.query(query,[UserName,password],callback);
 };

@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import AddBookRoute from "./Routes/AddBookRoute.js";
 import LoginRoute from "./Routes/LoginRoute.js";
-import AddMemberRoute from "./Routes/AddMemberRoute.js";
+
 import LoadCatalogRoute from "./Routes/LoadCatalogRoute.js";
 import LoadMembersRoute from "./Routes/LoadMembersRoute.js";
 import UserDataRoute from "./Routes/UserDataRoute.js";
@@ -18,6 +18,11 @@ import EditBookRoute from "./Routes/EditBookRoute.js";
 import LoadStudentsRoute from "./Routes/LoadStudentsRoute.js";
 import AddNewStudentRoute from "./Routes/AddNewStudentRoute.js";
 import LoadNoticesRoute from "./Routes/LoadNoticesRoute.js";
+import LoadPastPaperRoute from "./Routes/LoadPAstPapersRoute.js";
+import AddNewTeacherRoute from "./Routes/AddNewTeacherRoute.js";
+import LoadTeachersRoute from "./Routes/LoadTeachersRoute.js";
+import LoadAdminsRoute from "./Routes/LoadAdminsRoute.js";
+import AddNewAdminRoute from "./Routes/AddNewAdminRoute.js";
 
 const app=express();
 
@@ -27,7 +32,6 @@ app.use(cookieParser());
 
 app.use(AddBookRoute);
 app.use(LoginRoute);
-app.use(AddMemberRoute);
 app.use(LoadCatalogRoute);
 app.use(LoadMembersRoute);
 app.use(UserDataRoute);
@@ -41,5 +45,10 @@ app.use(EditBookRoute);
 app.use(LoadStudentsRoute);
 app.use(AddNewStudentRoute);
 app.use(LoadNoticesRoute);
+app.use(LoadPastPaperRoute);
+app.use(AddNewTeacherRoute);
+app.use(LoadTeachersRoute);
+app.use(LoadAdminsRoute);
+app.use(AddNewAdminRoute);
 
 app.listen(3000,()=>console.log("backend is running"));

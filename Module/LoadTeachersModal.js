@@ -1,23 +1,22 @@
 import db from '../db2.js';
 
-const LoadStudentsModal=(callback)=>{
+const LoadTeachersModal=(callback)=>{
 
     const query = `
     SELECT 
-        student.Student_Id,
-        student.Grade,
-        student.Class,
+        teacher.TeacherId,
+        teacher.NIC,
         user.DOB,
         user.FullName,
         user.Email,
         user.Address,
         user.ContactNumber
     FROM 
-        student
+        teacher
     INNER JOIN 
         user
     ON 
-        student.UserId = user.UserId
+        teacher.UserId = user.UserId
   `;
 
     db.query(query, (err, result) => {
@@ -30,4 +29,4 @@ const LoadStudentsModal=(callback)=>{
     });
 
 }
-export {LoadStudentsModal}
+export {LoadTeachersModal}

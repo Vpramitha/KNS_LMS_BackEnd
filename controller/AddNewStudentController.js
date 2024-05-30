@@ -1,7 +1,7 @@
 import { AddNewStudentModal } from "../Module/AddNewStudentModal.js";
 
 const AddNewStudentController = (req, res) => {
-  const {    UserId, Password, Email, StudentId, StudentName, Grade, DOB, ContactNumber, Address} = req.body;
+  const {StudentId,Email, StudentName, Grade, DOB, ContactNumber, Address,Class} = req.body;
 
   const callback = (error, result) => {
     if (error) {
@@ -16,8 +16,7 @@ const AddNewStudentController = (req, res) => {
   };
 
   AddNewStudentModal(
-    UserId, Password, Email, StudentId, StudentName, Grade, DOB, ContactNumber, Address,
-    callback
+    StudentId,Email, StudentName, Grade, DOB, ContactNumber, Address,Class, callback
   );
 };
 

@@ -1,6 +1,6 @@
-import { LoadStudentsModal } from "../Module/LoadStudentsModal.js"; 
+import { LoadTeachersModal } from "../Module/LoadTeachersModal.js"; 
 
-const LoadStudentsController = (req, res) => {
+const LoadTeachersController = (req, res) => {
     
     const callback = (error, result) => {
     if (error) {
@@ -15,8 +15,8 @@ const LoadStudentsController = (req, res) => {
 
 };  
 
-LoadStudentsModal(callback);
+LoadTeachersModal(callback);
 
 };
 
-export default LoadStudentsController;
+export default LoadTeachersController;

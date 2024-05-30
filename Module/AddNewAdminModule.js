@@ -1,14 +1,14 @@
 import db from '../db2.js';
 
-const AddNewStudentModal = (StudentId,Email, StudentName, Grade, DOB, ContactNumber, Address,Class, callback) => {
+const AddNewAdminModal = (AdminId,Email, FullName,DOB, ContactNumber, Address,NIC, callback) => {
     const userInsertQuery = "INSERT INTO `user`(`FullName`, `UserType`, `DOB`, `Address`, `Email`, `ContactNumber`) VALUES (?,?,?,?,?,?);";
-    const UserType = "student";
+    const UserType = "Admin";
 
-    const checkDuplicateQuery = "SELECT COUNT(*) as count FROM `student` WHERE `Student_Id` = ?;";
+    const checkDuplicateQuery = "SELECT COUNT(*) as count FROM `admin` WHERE `AdminId` = ?;";
 
-    const studentInsertQuery = "INSERT INTO `student`(`Student_Id`,`UserId`, `Grade`,`Class`) VALUES (?,?,?,?);";
+    const adminInsertQuery = "INSERT INTO `admin`(`AdminId`,`UserId`, `NIC`) VALUES (?,?,?);";
 
-    db.query(checkDuplicateQuery, [StudentId], (err, result) => {
+    db.query(checkDuplicateQuery, [AdminId], (err, result) => {
         if (err) {
             console.error('Error executing query:', err);
             callback(err, null);
@@ -20,7 +20,7 @@ const AddNewStudentModal = (StudentId,Email, StudentName, Grade, DOB, ContactNum
             return;
         }
 
-        db.query(userInsertQuery, [StudentName, UserType, DOB, Address, Email, ContactNumber], (err, result) => {
+        db.query(userInsertQuery, [FullName, UserType, DOB, Address, Email, ContactNumber], (err, result) => {
             if (err) {
                 console.error('Error executing query:', err);
                 callback(err, null);
@@ -30,7 +30,7 @@ const AddNewStudentModal = (StudentId,Email, StudentName, Grade, DOB, ContactNum
 
             const newUserId = result.insertId;
 
-            db.query(studentInsertQuery, [StudentId,newUserId, Grade, Class], (err, result) => {
+            db.query(adminInsertQuery, [AdminId,newUserId,NIC], (err, result) => {
                 if (err) {
                     console.error('Error executing query:', err);
                     callback(err, null);
@@ -44,4 +44,4 @@ const AddNewStudentModal = (StudentId,Email, StudentName, Grade, DOB, ContactNum
     
 };
 
-export { AddNewStudentModal };
+export { AddNewAdminModal };

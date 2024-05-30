@@ -13,9 +13,7 @@ const loginController=(req,res)=>{
   }
   else{
     console.log(results);
-    res.cookie('user_id', results[0].id, { httpOnly: true, expires: 0 });
-    res.cookie('user_name', results[0].Name, { httpOnly: true, expires: 0 });
-    res.json({"message":"you can log in to the system"});
+    res.json({"message":"you can log in to the system","FullName":results[0].FullName,"UserType":results[0].UserType,"Gender":results[0].Gender,"DOB":results[0].DOB,"Address":results[0].Address,"ContactNumber":results[0].ContactNumber,"Email":results[0].Email});
   }
 }
 
