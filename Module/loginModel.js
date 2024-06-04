@@ -6,4 +6,10 @@ const login = (UserName,password, callback) => {
 db.query(query,[UserName,password],callback);
 };
 
-export { login };
+const getAdminId = (UserName,password, callback) => {
+    const query = 'SELECT user.*, admin.* FROM user Inner JOIN admin ON user.UserId = admin.UserId WHERE user.UserName = ? AND user.Password = ?';
+
+db.query(query,[UserName,password],callback);
+};
+
+export { login,getAdminId };

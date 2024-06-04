@@ -10,7 +10,8 @@ const LoadTeachersModal=(callback)=>{
         user.FullName,
         user.Email,
         user.Address,
-        user.ContactNumber
+        user.ContactNumber,
+        user.UserId
     FROM 
         teacher
     INNER JOIN 

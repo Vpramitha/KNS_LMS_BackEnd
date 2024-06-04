@@ -2,6 +2,7 @@ import { AddNewAdminModal } from "../Module/AddNewAdminModule.js";
 
 const AddNewAdminController = (req, res) => {
   const {AdminId,Email, FullName, NIC, DOB, ContactNumber, Address} = req.body;
+  console.log(AdminId);
 
   const callback = (error, result) => {
     if (error) {

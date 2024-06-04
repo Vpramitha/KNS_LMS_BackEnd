@@ -24,4 +24,4 @@ addCopies(ISBN,NumberOfCopies);
 
 };
 
-export default AddBookController;
+export default AddBookController; 

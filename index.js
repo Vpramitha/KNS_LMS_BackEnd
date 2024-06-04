@@ -23,6 +23,12 @@ import AddNewTeacherRoute from "./Routes/AddNewTeacherRoute.js";
 import LoadTeachersRoute from "./Routes/LoadTeachersRoute.js";
 import LoadAdminsRoute from "./Routes/LoadAdminsRoute.js";
 import AddNewAdminRoute from "./Routes/AddNewAdminRoute.js";
+import AddTransactionRoute from "./Routes/AddTransactionRoute.js";
+import SetTransactionRoute from "./Routes/SetTransactionRoute.js";
+import LoadTransactionsRoute from "./Routes/LoadTransactionsRoute.js";
+import ReturnTransactionRoute from "./Routes/ReturnTransactionRoute.js";
+import EmailVerifyRoute from "./Routes/EmailVerifyRoute.js";
+import AccountRegisterRoute from "./Routes/AccountRegisterRoute.js";
 
 const app=express();
 
@@ -50,5 +56,11 @@ app.use(AddNewTeacherRoute);
 app.use(LoadTeachersRoute);
 app.use(LoadAdminsRoute);
 app.use(AddNewAdminRoute);
+app.use(AddTransactionRoute);
+app.use(SetTransactionRoute);
+app.use(LoadTransactionsRoute);
+app.use(ReturnTransactionRoute);
+app.use(EmailVerifyRoute); 
+app.use(AccountRegisterRoute);
 
 app.listen(3000,()=>console.log("backend is running"));
