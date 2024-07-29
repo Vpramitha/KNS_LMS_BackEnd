@@ -7,15 +7,18 @@ const addBook = (ISBN, Title, Author,Publisher,CategoryId,Description,NumberOfPa
 };
 
 const addCopies = (ISBN, NumberOfCopies) => {
+    
             for (let i = 0; i < NumberOfCopies; i++) {
+                
                 const query2 = "INSERT INTO resources (ISBN,CopyNumber) VALUES (?, ?)";
-                db.query(query2, [ISBN,i++], (error, result) => {
+                db.query(query2, [ISBN,(i+1)], (error, result) => {
                     if (error) {
                         console.log(error);
                     } else {
                         console.log(result);
                     }
                 });}
+                  
 };
 
 export { addBook,addCopies };

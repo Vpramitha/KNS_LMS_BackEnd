@@ -2,8 +2,8 @@ import db from '../db2.js';
 
 const AddTransactionModal = (AdminId, UserId, ResourceId, CurrentDate, DueDate, callback) => {
     const transactionInsertQuery = `
-        INSERT INTO Transaction (AdminId_Issue, UserId, Resource_Id, IssueDateTime, DueDate)
-        VALUES (?, ?, ?, ?, ?);
+        INSERT INTO Transaction (AdminId_Issue, UserId, Resource_Id, IssueDateTime, DueDate,Status)
+        VALUES (?, ?, ?, ?, ?, "Issued");
     `;
     
     const checkAvailabilityQuery = `

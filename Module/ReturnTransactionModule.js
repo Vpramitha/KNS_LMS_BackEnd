@@ -2,7 +2,7 @@ import db from '../db2.js';
 
 const ReturnTransactionModal = (AdminId, TransactionId, CurrentDate, callback) => {
     const transactionUpdateQuery = `
-        UPDATE transaction SET AdminId_Return = ?, ReturnDate = ? WHERE TransactionId = ?;
+        UPDATE transaction SET AdminId_Return = ?, ReturnDate = ?,Status="Completed" WHERE TransactionId = ?;
     `;
 
     const findResourceQuery = `SELECT Resource_Id FROM transaction WHERE TransactionId = ?`

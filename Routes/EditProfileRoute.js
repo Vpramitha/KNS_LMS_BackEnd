@@ -4,6 +4,6 @@ import EditProfileController from '../controller/EditProfileController.js';
 
 const EditProfileRoute =express.Router();
 
-EditProfileRoute.put("/editProfile",EditProfileController)
+EditProfileRoute.post("/editProfile",EditProfileController);
 
 export default EditProfileRoute;

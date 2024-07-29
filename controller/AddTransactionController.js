@@ -1,8 +1,8 @@
 import { AddTransactionModal } from "../Module/AddTransactionModule.js";
 
 const AddTransactionController = (req, res) => {
-  const { adminId, userId, resourceId, issueDate, returnDate } = req.body;
-  console.log(adminId, userId, resourceId, issueDate, returnDate);
+  const { adminId, userId, resourceId, issueDate, dueDate } = req.body;
+  console.log(adminId, userId, resourceId, issueDate, dueDate);
 
   const callback = (error, result) => {
     if (error) {
@@ -16,7 +16,8 @@ const AddTransactionController = (req, res) => {
     }
   };
 
-  AddTransactionModal(adminId, userId, resourceId, issueDate, returnDate, callback);
+  AddTransactionModal(adminId, userId, resourceId, issueDate, dueDate, callback);
 };
 
 export default AddTransactionController;
+ 

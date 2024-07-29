@@ -16,9 +16,9 @@ const AddNewStudentModal = (AdminId,StudentId,Email, StudentName, Grade, DOB, Co
       
     } else {
       // Student added successfully
-      console.log("The user verified:", result);
+      console.log("The user verified:", result); 
       
-    }
+    } 
   };
 
 

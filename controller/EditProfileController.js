@@ -1,19 +1,20 @@
 import { editProfile } from "../Module/EditProfile.js";
 
 const editProfileController=(req,res)=>{
-  const { Id,UserName, Password,Age } = req.body;
+  const { FullName, Gender, DOB, Address, Email, ContactNumber,UserId } = req.body;
 
-  const callBack=(err, results) => {
+  const callBack = (err, results) => {
   if (err) {
-    res.json({"message":{err}});
-    return;
-  }else{
+    console.error(err);
+    res.status(500).json({ message: err.message });
+  } else {
     console.log(results);
-    res.json({"message":"Updated your the profile"});
+    res.status(200).json({ message: "Updated your profile" });
   }
-}
+};
 
-  editProfile(Id,UserName,Password,Age,callBack);
+
+  editProfile(FullName, Gender, DOB, Address, Email, ContactNumber,UserId, callBack);
 }
   
 

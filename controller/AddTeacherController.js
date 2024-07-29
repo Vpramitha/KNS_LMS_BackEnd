@@ -1,7 +1,7 @@
 import { AddNewTeacherModal } from "../Module/AddTeacherModule.js";
 
 const AddNewTeacherController = (req, res) => {
-  const {TeacherId,Email, TeacherName, NIC, DOB,Gender, ContactNumber, Address} = req.body;
+  const {AdminId,TeacherId,Email, TeacherName, NIC, DOB,Gender, ContactNumber, Address} = req.body;
 
   const callback = (error, result) => {
     if (error) {
@@ -16,7 +16,7 @@ const AddNewTeacherController = (req, res) => {
   };
 
   AddNewTeacherModal(
-    TeacherId,Email, TeacherName, NIC, DOB,Gender, ContactNumber, Address, callback
+    AdminId,TeacherId,Email, TeacherName, NIC, DOB,Gender, ContactNumber, Address, callback
   );
 };
 

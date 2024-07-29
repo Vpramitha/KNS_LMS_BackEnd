@@ -29,6 +29,19 @@ import LoadTransactionsRoute from "./Routes/LoadTransactionsRoute.js";
 import ReturnTransactionRoute from "./Routes/ReturnTransactionRoute.js";
 import EmailVerifyRoute from "./Routes/EmailVerifyRoute.js";
 import AccountRegisterRoute from "./Routes/AccountRegisterRoute.js";
+import AddNoticeRoute from "./Routes/AddNoticeRoute.js";
+import QrCodeScanRoute from "./Routes/QrCodeScanRoute.js";
+import ShortReportRoute from "./Routes/ShortReportRoute.js";
+import AddPastPaperRoute from "./Routes/AddPastPaperRoute.js";
+import GetLateReturnsRoute from "./Routes/GetLateReturnsRoute.js";
+import LostBookRoute from "./Routes/LostBookRoute.js";
+import LoadLostBooksRoute from "./Routes/LoadLoastBooksRoute.js";
+import getWeeklyTransactionSummaryRoute from "./Routes/getWeeklyTransactionSummaryRoute.js";
+import LoadDamageBooksRoute from "./Routes/LoadDamageBooksRoute.js";
+import EditNoticeRoute from "./Routes/EditNoticeRoute.js";
+import GenerateLastMonthUsageRouteRoute from "./Routes/GenerateLastMonthUsageRoute.js";
+import DamageBookRoute from "./Routes/DamageBookRoute.js";
+
 
 const app=express();
 
@@ -58,9 +71,22 @@ app.use(LoadAdminsRoute);
 app.use(AddNewAdminRoute);
 app.use(AddTransactionRoute);
 app.use(SetTransactionRoute);
-app.use(LoadTransactionsRoute);
+app.use(LoadTransactionsRoute); 
 app.use(ReturnTransactionRoute);
 app.use(EmailVerifyRoute); 
 app.use(AccountRegisterRoute);
+app.use(AddNoticeRoute);
+app.use(QrCodeScanRoute);
+app.use(ShortReportRoute);
+app.use(AddPastPaperRoute);
+app.use(GetLateReturnsRoute);
+app.use(LostBookRoute);
+app.use(LoadLostBooksRoute);
+app.use(getWeeklyTransactionSummaryRoute);
+app.use(LoadDamageBooksRoute);
+app.use(EditProfileRoute);
+app.use(EditNoticeRoute);
+app.use(GenerateLastMonthUsageRouteRoute);
+app.use(DamageBookRoute);
 
 app.listen(3000,()=>console.log("backend is running"));

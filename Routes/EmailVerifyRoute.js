@@ -4,6 +4,6 @@ import EmailVerifyController from '../controller/EmailVerifyController.js';
 
 const EmailVerifyRoute =express.Router();
 
-EmailVerifyRoute.post("/VerifyUser",EmailVerifyController)
+EmailVerifyRoute.post("/verifyUser",EmailVerifyController)
 
 export default EmailVerifyRoute;

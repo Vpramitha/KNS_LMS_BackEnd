@@ -11,13 +11,17 @@ const LoadTeachersModal=(callback)=>{
         user.Email,
         user.Address,
         user.ContactNumber,
-        user.UserId
+        user.UserId,
+        user.VerifiedBy,
+        user.Gender
     FROM 
         teacher
     INNER JOIN 
         user
     ON 
         teacher.UserId = user.UserId
+    ORDER BY 
+    user.UserId DESC;
   `;
 
     db.query(query, (err, result) => {

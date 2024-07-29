@@ -2,8 +2,8 @@
 import { EditBook } from "../Module/EditBookModule.js"; 
 
 const EditBookController = (req, res) => {
-    const { Title, Author,Publisher,Description,NumberOfPages,Price,NumberOfCopies,ISBN } = req.body;
-    console.log(Title, Author,Publisher,Description,NumberOfPages,Price+NumberOfCopies+ISBN+ "the request");
+    const { Title, Author,Publisher,CategoryId,Description,NumberOfPages,Price_Rs,NumberOfCopies,ISBN } = req.body;
+    console.log(Title, Author,Publisher,Description,NumberOfPages,Price_Rs+NumberOfCopies+ISBN+ "the request"+CategoryId);
     console.log("................................ISBN : "+ISBN)
 
     const callback = (error, result) => {
@@ -17,9 +17,9 @@ const EditBookController = (req, res) => {
         res.status(200).json({ message: "Book Edited successfully" });
     }
 
-};
+}; 
 
-EditBook(Title, Author,Publisher,Description,NumberOfPages,Price,NumberOfCopies,ISBN,callback);
+EditBook(Title, Author,Publisher,Description,NumberOfPages,Price_Rs,NumberOfCopies,ISBN,CategoryId,callback);
 
 
 };

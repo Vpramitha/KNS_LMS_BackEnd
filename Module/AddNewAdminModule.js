@@ -1,6 +1,7 @@
 import db from '../db2.js';
+import { EmailVerifyModal } from "../Module/EmailVerifyModal.js";
 
-const AddNewAdminModal = (AdminId, Email, FullName, DOB, ContactNumber, Address, NIC, callback) => {
+const AddNewAdminModal = (AdminIdVerify,AdminId, Email, FullName, DOB, ContactNumber, Address, NIC, callback) => {
     const userInsertQuery = `
         INSERT INTO user (FullName, UserType, DOB, Address, Email, ContactNumber)
         VALUES (?, ?, ?, ?, ?, ?);
@@ -17,6 +18,18 @@ const AddNewAdminModal = (AdminId, Email, FullName, DOB, ContactNumber, Address,
         INSERT INTO admin (AdminId, UserId, NIC)
         VALUES (?, ?, ?);
     `;
+
+    const emailCallback = (error, result) => {
+    if (error) {
+      // Handle error
+      console.error("Error:", error);
+      
+    } else {
+      // Student added successfully
+      console.log("The user verified:", result);
+      
+    }
+  };
 
     db.query(checkDuplicateQuery, [AdminId], (err, result) => {
         if (err) {
@@ -46,6 +59,10 @@ const AddNewAdminModal = (AdminId, Email, FullName, DOB, ContactNumber, Address,
                     callback(err, null);
                     return;
                 }
+
+                if(AdminIdVerify){
+                EmailVerifyModal(newUserId,AdminId,Email, emailCallback);
+            }
 
                 callback(null, result);
             });

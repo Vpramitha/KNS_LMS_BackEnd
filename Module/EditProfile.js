@@ -1,9 +1,9 @@
-import db from '../db.js';
+import db from '../db2.js';
 
-const editProfile = (Id, UserName, Password, Age, callback) => {
-    const query = 'UPDATE login SET Name = ?, Passwprd = ?, Age = ? WHERE id = ?';
+const editProfile = (FullName, Gender, DOB, Address, Email, ContactNumber,UserId, callback) => {
+    const query = 'UPDATE user SET FullName = ?, Gender=?, DOB=?, Address=?, Email =?, ContactNumber = ? WHERE UserId = ?';
 
-    db.query(query, [UserName, Password, Age, Id], callback);
+    db.query(query, [FullName, Gender, DOB, Address, Email, ContactNumber,UserId], callback);
 };
 
 export { editProfile };

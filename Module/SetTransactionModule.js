@@ -17,7 +17,7 @@ const SetTransactionModal = (AdminId, UserId, ResourceId, CurrentDate, DueDate, 
     const checkUseroutstandingTransactionsQuery = `
         SELECT COUNT(*) AS outstandingTransactions
         FROM transaction 
-        WHERE UserId = ? AND ReturnDate IS NULL;
+        WHERE UserId = ? AND Status = "Issued";
     `;
 
     const checkUserQuery = `

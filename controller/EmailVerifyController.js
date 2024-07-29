@@ -3,6 +3,13 @@ import { EmailVerifyModal } from "../Module/EmailVerifyModal.js";
 const EmailVerifyModalController = (req, res) => {
   const {UserId,AdminId,Email} = req.body;
 
+  console.log("######################################################################");
+
+  console.log("user Id is "+UserId);
+  console.log("Admin Id is "+AdminId); 
+  console.log("Email is "+Email);
+  console.log("######################################################################");
+
   const callback = (error, result) => {
     if (error) {
       // Handle error
