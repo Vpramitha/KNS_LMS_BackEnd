@@ -2,15 +2,18 @@ import db from '../db2.js';
 import express from 'express';
 import nodemailer from 'nodemailer';
 
+// Hardcoded email credentials for sending verification emails
 console.log('Test 1: Hardcoded email credentials');
 const EMAIL_USER = "vidulpramitha2000@gmail.com";
 const EMAIL_PASS = "cdse uste igza zboz";
 console.log('EMAIL_USER:', EMAIL_USER);
 console.log('EMAIL_PASS:', EMAIL_PASS ? 'Loaded' : 'Not Loaded');
 
+// Function to handle email verification
 const EmailVerifyModal = async (UserId, AdminId, Email, callback) => {
     console.log('Test 2: Inside EmailVerifyModal');
 
+    // Function to generate a random verification key
     function generateKey(length) {
         console.log('Test 3: Inside generateKey');
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -23,7 +26,8 @@ const EmailVerifyModal = async (UserId, AdminId, Email, callback) => {
         return result;
     } 
 
-    async function sendEmail(to, userId,key) {
+    // Function to send an email with the verification details
+    async function sendEmail(to, userId, key) {
         console.log('Test 4: Inside sendEmail');
         let transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -42,7 +46,7 @@ const EmailVerifyModal = async (UserId, AdminId, Email, callback) => {
             from: EMAIL_USER,
             to: to,
             subject: "Verify The User Account in Library Management System of R/Kalawana National School",
-            text: "Your Temporary Id is "+ userId +"and your Verifying Key is " + key +".Now You can go to the got verified email in login page and create won account with own username and password"
+            text: "Your Temporary Id is "+ userId +" and your Verifying Key is " + key + ". Now you can go to the verify email in login page and create your own account with username and password."
         };
 
         console.log('Test 6: Mail options created', mailOptions);
@@ -74,7 +78,7 @@ const EmailVerifyModal = async (UserId, AdminId, Email, callback) => {
             console.log('Test 10: Query executed, result:', result);
 
             try {
-                await sendEmail(Email, UserId,Key);
+                await sendEmail(Email, UserId, Key);
                 console.log('Test 11: Email sent');
                 callback(null, result);
             } catch (emailError) {

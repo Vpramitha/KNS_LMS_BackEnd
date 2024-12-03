@@ -8,8 +8,8 @@ const ShortReportController = (req, res) => {
       console.error("Error:", error);
       res.status(500).json({ message: "Error" });
     } else {
-      // Notice added successfully
-      console.log("The Notice added successfully", result);
+      // Report generated successfully
+      console.log("The report generated successfully", result);
       res.status(200).json(result);
     }
   };

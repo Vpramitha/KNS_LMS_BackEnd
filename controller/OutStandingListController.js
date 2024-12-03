@@ -1,9 +1,9 @@
-import { LostBookModal } from "../Module/LostBookModule.js";
+import { OutStandingListModal } from "../Module/OutStandingTransactionListModal.js";
 
 // Controller for handling the reporting of lost books
-const LostBookController = (req, res) => {
-  const { ResourceId, AdminId, Reason, Date, TransactionId } = req.body;
-  console.log(ResourceId);
+const OutStandingListController = (req, res) => {
+  const { UserId } = req.body;
+  console.log(UserId);
 
   // Callback function to handle the response from the LostBookModal function
   const callback = (error, result) => {
@@ -19,9 +19,7 @@ const LostBookController = (req, res) => {
   };
 
   // Call the LostBookModal function with the callback
-  LostBookModal(
-    ResourceId, AdminId, Reason, Date, TransactionId, callback
-  );
+  OutStandingListModal(UserId, callback);
 };  
 
-export default LostBookController;
+export default OutStandingListController;

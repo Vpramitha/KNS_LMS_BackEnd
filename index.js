@@ -7,8 +7,8 @@ import LoginRoute from "./Routes/LoginRoute.js";
 
 import LoadCatalogRoute from "./Routes/LoadCatalogRoute.js";
 import LoadMembersRoute from "./Routes/LoadMembersRoute.js";
-import UserDataRoute from "./Routes/UserDataRoute.js";
-import LogoutRoute from "./Routes/logout.route.js";
+import OutStandingListRoute from "./Routes/OutStandingListRoute.js";
+
 import EditProfileRoute from "./Routes/EditProfileRoute.js";
 import getCatagoriesRoute from "./Routes/getCategoriesRoute.js";
 import selectCopiesRoute from "./Routes/selectCopiesRoute.js";
@@ -53,8 +53,9 @@ app.use(AddBookRoute);
 app.use(LoginRoute);
 app.use(LoadCatalogRoute);
 app.use(LoadMembersRoute);
-app.use(UserDataRoute);
-app.use(LogoutRoute);
+
+app.use(OutStandingListRoute);
+
 app.use(EditProfileRoute);
 app.use(getCatagoriesRoute);
 app.use(selectCopiesRoute);

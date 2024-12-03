@@ -1,6 +1,7 @@
 import db from '../db2.js';
 
-const LoadAdminsModal=(callback)=>{
+// Function to load and return a list of admins
+const LoadAdminsModal = (callback) => {
 
     const query = `
     SELECT 
@@ -25,14 +26,17 @@ const LoadAdminsModal=(callback)=>{
     user.UserId DESC;
   `;
 
+    // Execute the query to load admins
     db.query(query, (err, result) => {
         if (err) {
             console.error('Error executing query:', err);
             callback(err, null);
             return;
         }
+        // Return the result of the query
         callback(null, result);
     });
 
 }
-export {LoadAdminsModal}
+
+export { LoadAdminsModal }

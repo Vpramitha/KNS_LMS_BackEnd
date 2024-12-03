@@ -1,5 +1,6 @@
 import db from '../db2.js';
 
+// Function to get a summary of transactions for the past week
 const getWeeklyTransactionSummary = (callback) => {
     const query = `
         SELECT 
@@ -39,6 +40,7 @@ const getWeeklyTransactionSummary = (callback) => {
             dates.Date;
     `;
     
+    // Execute the query to get the weekly transaction summary
     db.query(query, callback);
 };
 

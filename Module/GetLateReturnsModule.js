@@ -1,6 +1,9 @@
 import db from '../db2.js';
 
+// Function to get details of late returns from the transaction table
 const GetLateReturnsModule = (CurrentDate,  callback) => {
+
+// SQL query to select detailed information about late returns
     const query = `SELECT 
     t.*,
     issueUser.UserId AS IssueAdminUserId,
@@ -33,7 +36,7 @@ ORDER BY
     t.TransactionId DESC;
 `;
 
-
+// Execute the query and pass the result to the callback function
     db.query(query, [CurrentDate], callback);
 };
 
